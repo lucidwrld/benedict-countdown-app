@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "DM Sans", sans-serif;
+
+  --color-bg: #0f0f10;
+  --color-surface: #18181b;
+  --color-raised: #1f1f23;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text-primary: #f0ede8;
+  --color-text-secondary: #a8a49d;
+  --color-text-muted: #6b675f;
+  --color-accent: #f59e0b;
+  --color-critical: #ff4d4d;
+  --color-soon: #f59e0b;
+  --color-upcoming: #34d399;
+  --color-distant: #60a5fa;
+
+  --shadow-accent-glow: 0 2px 12px rgba(245, 158, 11, 0.25);
+  --shadow-accent-glow-lg: 0 4px 18px rgba(245, 158, 11, 0.35);
+  --shadow-critical-glow: 0 8px 30px rgba(255, 77, 77, 0.18);
+  --shadow-soon-glow: 0 8px 30px rgba(245, 158, 11, 0.15);
+  --shadow-upcoming-glow: 0 8px 30px rgba(52, 211, 153, 0.12);
+  --shadow-distant-glow: 0 8px 30px rgba(96, 165, 250, 0.1);
+
+  --animate-card-in: cardIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+  --animate-ring-expand: ringExpand 3s ease-in-out infinite;
+  --animate-modal-in: modalIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-fade-in: fadeIn 0.25s ease both;
+
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(18px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.15); }
+  }
+  @keyframes ringExpand {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50%       { opacity: 0.7; transform: scale(1.04); }
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+@layer base {
+  ::selection {
+    background-color: rgba(245, 158, 11, 0.25);
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.6);
+    cursor: pointer;
+  }
+}
