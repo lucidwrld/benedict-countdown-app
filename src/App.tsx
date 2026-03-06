@@ -84,7 +84,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main */}
+      {/* Main section*/}
       <main className="relative z-10 max-w-5xl mx-auto px-6 py-8 pb-16">
         {events.length === 0 ? (
           <EmptyState onAdd={openCreate} />
